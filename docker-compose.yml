@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: wiki
+    build: 
+      context: ./build/php
+    volumes:
+      - ./htdocs:/var/www/html
+    restart: always
+    ports:
+      - "80:80"
+
+  mysql:
+    container_name: mysql
+    build: 
+      context: ./build/mysql/
+    env_file:
+      - build/env/.env
+    volumes:
+      - ./build/mysql/mysql_data:/var/lib/mysql
+    restart: always
+#    environment:
+#      - TZ=Asia/Tokyo
+    ports:
+      - 3306:3306
+    tty: true
+
+
