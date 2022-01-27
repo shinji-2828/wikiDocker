@@ -1,4 +1,11 @@
-＃ myWiki
+# myWiki
+
+## 環境
+
+```
+lamp
+```
+詳細は dockerfile ,docker-compose.yml参照
 
 ## mediawikiをDockerで構築
 
